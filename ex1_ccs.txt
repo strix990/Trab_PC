@@ -1,0 +1,23 @@
+B1f := b1rf!.B1f + b1wf?.B1f + b1wt?.B1t
+B1t:= b1rt!.B1t + b1wf?.B1f + b1wt?.B1t
+
+B2f := b2rf!.B2f + b2wf?.B2f + b2wt?.B2t
+B2t := b2rt!.B2t + b2wf?.B2f + b2wt?.B2t
+
+K1 := kr1!.K1 + kw1?.K1 + kw2?.K2
+K2 := kr2!.K2 + kw1?.K1 + kw2?.K2
+
+P1 := b1wt!.P11
+P11 := kr1?.P12 + kr2?.PN1
+PN1 := b2rf?.kw1!.P11 + b2rt?.PN1
+P12 := enter1.exit1.b1wf!.P1
+
+P2 := b2wt!.P21
+P21 := kr2?.P22 + kr1?.PN2
+PN2 := b1rf?.kw2!.P21 + b1rt?.PN2
+P22 := enter2.exit2.b2wf!.P2
+
+Hyman :=
+(P1 | P2 | B1f | B2f | K1) \ {b1rf, b2rf, b1rt, b2rt, b1wf, b2wf, b1wt, b2wt, kr1, kr2, kw1, kw2}
+
+Hyman
